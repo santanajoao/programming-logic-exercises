@@ -17,7 +17,9 @@ Saída:
 */
 
 function reverseNames(fullName) {
-  // Desenvolva seu código nessa função
+  const namesArray = fullName.split(' ');
+  const reversedNamesArray = namesArray.reverse()
+  return reversedNamesArray.join(' ');
 }
 
 module.exports = reverseNames;
