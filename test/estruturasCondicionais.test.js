@@ -91,7 +91,7 @@ describe("Desafios de Estruturas Condicionais.", () => {
     });
   });
 
-  describe("03 - Testando a Função findAdventurous.", () => {
+  describe.only("03 - Testando a Função findAdventurous.", () => {
     it("Ao passar o argumento 'Tunico', deve retornar: 'Mestre dos Magos'", () => {
       expect(findAdventurous("Tunico")).toBe("Mestre dos Magos");
     });
