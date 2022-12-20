@@ -16,7 +16,12 @@ Saída:
 */
 
 function firstLastLetter(word) {
-  // Desenvolva seu código nessa função
+  const firstLetter = word[0];
+  const lastIndex = word.length - 1;
+  const lastLetter = word[lastIndex];
+  return (
+    `A primeira letra é: ${firstLetter} e a última letra é: ${lastLetter}.`
+  );
 }
 
 module.exports = firstLastLetter;
