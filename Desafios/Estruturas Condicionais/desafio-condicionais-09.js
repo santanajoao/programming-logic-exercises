@@ -8,14 +8,14 @@ Escreva um algoritmo que recebe um objeto com a seguinte estrutura:
 {
 rec: bool,
 reqs: number int,
-allReqs: number int,
+totalReqs: number int,
 completed: number int,
 }
 
 Onde:
 * rec: informando se a pessoa estudante está ou não em recuperação;
 * reqs: são os requisitos obrigatórios;
-* allReqs: são os requisitos obrigatórios mais os bônus:
+* totalReqs: são os requisitos obrigatórios mais os bônus:
 * completed: quantidade de requisitos feitos, completados:
 
 Considere as seguintes premissas:
@@ -34,8 +34,18 @@ Caso a pessoa não tenha conseguido entregar o projeto retorne:
 
 */
 
-function evaluateProject(obj){
-  // Desenvolva seu código nessa função
+function evaluateProject({ rec, reqs, totalReqs, completed }){
+  const percentedNedeed = (rec ? 0.9 : 0.8);
+  const consideredRequirements = (rec ? totalReqs : reqs);
+  console.log(reqs, totalReqs);
+  const percentageCompleted = completed / consideredRequirements;
+  const aproved = (percentageCompleted >= percentedNedeed);
+  console.log(percentedNedeed, consideredRequirements, percentageCompleted, aproved);
+  
+  if (aproved) {
+    return 'Parabéns, você está aprovado(a)!';
+  }
+  return 'Você ainda precisa entregar mais requisitos ;)';
 }
 
 module.exports = evaluateProject;
