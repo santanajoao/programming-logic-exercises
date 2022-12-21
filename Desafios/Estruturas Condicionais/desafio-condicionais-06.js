@@ -24,7 +24,9 @@ O retorno deve ser no seguinte formato:
 */
 
 function basalMetabolicRate(age, sex, weight, height){
-  // Desenvolva seu código nessa função
+  const variableParameter = (sex === 'M') ? 5 : -161;
+  const BMR = height * 6.25 + weight * 9.99 - age * 4.92 + variableParameter;
+  return `A taxa metabólica basal é: ${BMR} Kcal.`;
 }
 
 module.exports = basalMetabolicRate;
