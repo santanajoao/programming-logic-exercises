@@ -16,7 +16,9 @@ Saída:
 */
 
 function sortAgeAsc(mariaAge, silviaAge, izaAge){
-  // Desenvolva seu código nessa função
+  const ages = [mariaAge, silviaAge, izaAge];
+  const orderedAges = ages.sort((a, b) => a - b);
+  return orderedAges.join(', ');
 }
 
 module.exports = sortAgeAsc;

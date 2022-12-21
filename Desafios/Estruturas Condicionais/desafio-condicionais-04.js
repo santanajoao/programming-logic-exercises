@@ -33,8 +33,14 @@ Caso o comando não for reconhecido, retorne:
 
 */
 
-function polyglotDinosaur(command){
-  // Desenvolva seu código nessa função
+function polyglotDinosaur(command) {
+  const languages = {
+    'esquerda': 'english',
+    'direita': 'français',
+    'nenhuma': 'português',
+    'as duas': 'Ai eu caio, né!!',
+  };
+  return languages[command] || 'Comando desconhecido.'
 }
 
 module.exports = polyglotDinosaur;

@@ -16,7 +16,12 @@ Saída:
 */
 
 function mathOperations(number1, number2) {
-  // Desenvolva seu código nessa função
+  return (
+    `${number1} + ${number2} = ${number1 + number2}. ` +
+    `${number1} - ${number2} = ${number1 - number2}. ` +
+    `${number1} x ${number2} = ${number1 * number2}. ` +
+    `${number1} / ${number2} = ${number1 / number2}.`
+  );
 }
 
 module.exports = mathOperations;

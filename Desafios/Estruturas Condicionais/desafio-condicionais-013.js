@@ -20,8 +20,21 @@ E retorne uma mensagem com pontuação de cada enxadrista após a partida no seg
 
 */
 
-function chessRating(ratingPlayOne,ratingPlayTwo){
-  // Desenvolva seu código nessa função
+function chessRating(ratingPlayOne, ratingPlayTwo){
+  const difference = Math.abs(ratingPlayOne - ratingPlayTwo);
+  const points = (difference <= 200) ? 20 : 10;
+
+  if (ratingPlayOne > ratingPlayTwo) {
+    return (
+      `Enxadrista1: ${ratingPlayOne - points} pontos. ` +
+      `Enxadrista2: ${ratingPlayTwo + points} pontos.`
+    );
+  }
+
+  return (
+      `Enxadrista1: ${ratingPlayOne + points} pontos. ` +
+      `Enxadrista2: ${ratingPlayTwo - points} pontos.`
+    );
 }
 
 module.exports = chessRating;

@@ -19,8 +19,33 @@ O que será avaliado?
 
 */
 
+const getTelephoneParts = (string, length) => {
+  const DDD = string.slice(0, 2);
+  const aditionalNumber = (length === 11) ? string[2] : '';
+
+  const firstStartIndex = (length === 11) ? 3 : 2;
+  const firstEndIndex = (length === 11) ? 7 : 6;
+
+  const firstNumbers = string.slice(firstStartIndex, firstEndIndex);
+  const lastNumbers = string.slice(firstEndIndex);
+
+  return { DDD, aditionalNumber, firstNumbers, lastNumbers };
+}
+
 function telephoneFormat(string) {
-  // Desenvolva seu código nessa função
+  const newString = String(string).replace(/[ ()-]/g, '');
+  const { length } = newString;
+
+  if (length < 10 || length > 11) return string;
+
+  const {
+    DDD, aditionalNumber, firstNumbers, lastNumbers,
+  } = getTelephoneParts(newString, length);
+
+  if (aditionalNumber) {
+    return `(${DDD}) ${aditionalNumber} ${firstNumbers}-${lastNumbers}`;
+  }
+  return `(${DDD}) ${firstNumbers}-${lastNumbers}`;
 }
 
 module.exports = telephoneFormat;

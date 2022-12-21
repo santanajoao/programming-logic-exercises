@@ -38,8 +38,40 @@ Caso o contrário, retorne:
 
 */
 
-function droneDelivery(heightBox, widthBox, depthBox, heightWindow, widthWindow, depthWindow){
-  // Desenvolva seu código nessa função
+/* 
+      |                    | 
+      |                    |  /
+      |                    | /     
+      |____________________|/
+*/
+
+const isPossible = (
+  heightBox, widthBox, depthBox, heightWindow, widthWindow, depthWindow
+) => {
+  if (heightBox < heightWindow && widthBox < widthWindow) return true;
+  if (heightBox < widthWindow && widthBox < heightWindow) return true;
+
+  if (heightBox < heightWindow && widthBox < depthWindow) return true;
+  if (heightBox < depthWindow && widthBox < heightWindow) return true;
+
+  if (heightBox < heightWindow && depthBox < widthWindow) return true;
+  if (heightBox < widthWindow && depthBox < heightWindow) return true;
+
+  if (heightBox < heightWindow && depthBox < depthWindow) return true;
+  if (heightBox < depthWindow && depthBox < heightWindow) return true;
+  
+  return false;
+}
+
+function droneDelivery(
+  heightBox, widthBox, depthBox, heightWindow, widthWindow, depthWindow
+){
+  const result = isPossible(
+    heightBox, widthBox, depthBox, heightWindow, widthWindow, depthWindow,
+  );
+
+  const variable = result ? 'É' : 'Não é';
+  return `${variable} possível realizar a entrega.`;
 }
 
 module.exports = droneDelivery;

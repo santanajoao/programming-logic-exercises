@@ -128,7 +128,7 @@ describe("Desafios de Estruturas Condicionais.", () => {
       expect(polyglotDinosaur("nenhuma")).toBe("português");
     });
     it("Ao passar o argumento 'as duas', deve retornar: 'Ai eu caiu, né!!'", () => {
-      expect(polyglotDinosaur("as duas")).toBe("Ai eu caiu, né!!");
+      expect(polyglotDinosaur("as duas")).toBe("Ai eu caio, né!!");
     });
     it("Ao passar o argumento 'Xablau', deve retornar: 'Comando desconhecido'", () => {
       expect(polyglotDinosaur("Xablau")).toBe("Comando desconhecido.");

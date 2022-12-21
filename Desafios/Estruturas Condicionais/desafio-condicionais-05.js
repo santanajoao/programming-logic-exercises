@@ -29,8 +29,9 @@ Caso contrário retorne:
 
 */
 
-function robotFriend(mon, dad, me, brother, sister){
-  // Desenvolva seu código nessa função
+function robotFriend(mom, dad, me, brother, sister){
+  const willExecute = mom || dad || me || (brother && sister);
+  return willExecute ? 'Things I do for love...' : 'Not today.';
 }
 
 module.exports = robotFriend;

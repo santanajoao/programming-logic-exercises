@@ -14,7 +14,16 @@ u - 1
 */
 
 function encodeMessage(string) {
-  // Desenvolva seu código nessa função
+  const map = { 'a': '5', 'e': 'b', 'i': '9', 'o': 'p', 'u': '1' };
+
+  let encodedMessage = '';
+  for (let index = 0; index < string.length; index += 1) {
+    const caractere = string[index];
+    const replacement = map[caractere]
+    encodedMessage += replacement || caractere;
+  }
+  
+  return encodedMessage;
 }
 
 module.exports = encodeMessage;

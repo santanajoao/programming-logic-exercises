@@ -20,7 +20,9 @@ Saída:
 */
 
 function dogName(snack, sweet) {
-  // Desenvolva seu código nessa função
+  const lastIndex = sweet.length - 1;
+  const dogName = snack.slice(0, 3) + sweet.slice(lastIndex - 2);
+  return `O cachorrinho de Joana vai se chamar: ${dogName}`;
 }
 
 module.exports = dogName;

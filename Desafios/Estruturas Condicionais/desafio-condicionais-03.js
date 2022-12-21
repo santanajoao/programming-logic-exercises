@@ -25,7 +25,15 @@ Caso o nome informado não faça parte do esquadrão, retorne:
  */
 
 function findAdventurous(adventurous){
-  // Desenvolva seu código nessa função
+  const Classes = {
+    Tunico: 'Mestre dos Magos',
+    Cremoso: 'Cavaleiro Negro',
+    Gordinho: 'Pirata',
+    'Lobo Solitário': 'Samurai',
+    Ousado: 'Mago',
+    'Anjo Loiro': 'Clérigo',
+  }
+  return Classes[adventurous] || 'Aventureiro não encontrado';
 }
 
 module.exports = findAdventurous;

@@ -34,7 +34,17 @@ Caso o contrário retorne:
 
 
 function oddOreEven(lucioFingers, anaFingers, even){
-  // Desenvolva seu código nessa função
+  const sum = lucioFingers + anaFingers;
+  const isEven = sum % 2 === 0;
+  
+  let winner = '';
+  if (isEven) {
+    winner = (even === 1) ? 'Lúcio' : 'Ana';
+  } else {
+    winner = (even === 1) ? 'Ana' : 'Lúcio'
+  }
+  
+  return `${winner} venceu`;
 }
 
 module.exports = oddOreEven;

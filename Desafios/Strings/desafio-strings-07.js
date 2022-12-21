@@ -32,7 +32,39 @@ Senão, retorne:
 */
 
 function includeA(word) {
-  // Desenvolva seu código nessa função
+  const lowerCaseWord = word.toLowerCase();
+  const wordMiddle = lowerCaseWord.slice(1, word.length - 1);
+  const startsWithA = lowerCaseWord[0] === 'a';
+  const endsWithA = lowerCaseWord.endsWith('a');
+  const hasAInMiddle = wordMiddle.includes('a');
+
+  if (startsWithA && endsWithA && hasAInMiddle) {
+    return `A palavra ${word} possui a letra 'a' no começo, no meio e no fim.`;
+  }
+
+  if (startsWithA && endsWithA && !hasAInMiddle) {
+    return (
+      `A palavra ${word} possui a letra 'a' ` +
+      `apenas no começo e no fim da palavra.`
+    );
+  }
+
+  if (startsWithA && !(endsWithA || hasAInMiddle)) {
+    return `A palavra ${word} possui a letra 'a' apenas como primeira letra.`;
+  }
+
+  if (endsWithA && !(startsWithA || hasAInMiddle)) {
+    return `A palavra ${word} possui a letra 'a' apenas como última letra.`
+  }
+
+  if (hasAInMiddle && !(startsWithA || endsWithA)) {
+    return (
+      `A palavra ${word} possui a letra 'a', ` +
+      `porém não é a primeira nem a última letra.`
+    );
+  }
+
+  return `A palavra ${word} não contém a letra 'a'.`;
 }
 
 module.exports = includeA;
