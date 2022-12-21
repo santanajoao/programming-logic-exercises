@@ -17,8 +17,10 @@ A saída deve ter o seguinte formato:
 */
 
 function findOldestSon(pedroAge, kidsAge){
-  // Desenvolva seu código aqui.
-  return // Retorne o resultado aqui
+  const threeAgesSum = kidsAge.reduce((agesSum, age) => agesSum + age, 0);
+  const fourthSum = pedroAge - threeAgesSum;
+  const oldest = Math.max(...kidsAge, fourthSum);
+  return `O filho mais velho tem ${oldest} anos.`;
 }
 
 module.exports = findOldestSon;
