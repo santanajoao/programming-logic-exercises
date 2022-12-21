@@ -37,10 +37,8 @@ Caso a pessoa não tenha conseguido entregar o projeto retorne:
 function evaluateProject({ rec, reqs, totalReqs, completed }){
   const percentedNedeed = (rec ? 0.9 : 0.8);
   const consideredRequirements = (rec ? totalReqs : reqs);
-  console.log(reqs, totalReqs);
   const percentageCompleted = completed / consideredRequirements;
   const aproved = (percentageCompleted >= percentedNedeed);
-  console.log(percentedNedeed, consideredRequirements, percentageCompleted, aproved);
   
   if (aproved) {
     return 'Parabéns, você está aprovado(a)!';
