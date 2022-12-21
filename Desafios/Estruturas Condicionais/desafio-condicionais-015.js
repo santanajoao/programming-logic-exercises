@@ -10,7 +10,19 @@ Escreva um algoritmo que simula o jogo "pedra, papel e tesoura" levando em consi
 */
 
 function rockPaperScissors(signPerson1, signPerson2){
-  // Desenvolva seu código nessa função
+  const winsTo = {
+    'rock': 'scissors',
+    'paper': 'rock',
+    'scissors': 'paper',
+  };
+
+  if (signPerson1 === signPerson2) return 'A Ties';
+
+  if (winsTo[signPerson1] === signPerson2) {
+    return 'Player 1 won';
+  }
+
+  return 'Player 2 won'
 }
 
 module.exports = rockPaperScissors;
