@@ -91,7 +91,7 @@ describe("Desafios de Estruturas Condicionais.", () => {
     });
   });
 
-  describe.only("03 - Testando a Função findAdventurous.", () => {
+  describe("03 - Testando a Função findAdventurous.", () => {
     it("Ao passar o argumento 'Tunico', deve retornar: 'Mestre dos Magos'", () => {
       expect(findAdventurous("Tunico")).toBe("Mestre dos Magos");
     });
@@ -128,7 +128,7 @@ describe("Desafios de Estruturas Condicionais.", () => {
       expect(polyglotDinosaur("nenhuma")).toBe("português");
     });
     it("Ao passar o argumento 'as duas', deve retornar: 'Ai eu caiu, né!!'", () => {
-      expect(polyglotDinosaur("as duas")).toBe("Ai eu caiu, né!!");
+      expect(polyglotDinosaur("as duas")).toBe("Ai eu caio, né!!");
     });
     it("Ao passar o argumento 'Xablau', deve retornar: 'Comando desconhecido'", () => {
       expect(polyglotDinosaur("Xablau")).toBe("Comando desconhecido.");
