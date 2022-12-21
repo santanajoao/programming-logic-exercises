@@ -19,8 +19,8 @@ Obs: Os retornos tem que ser dados do tipo boolean.
 */
 
 function dataType(types){
-  // Desenvolva seu código aqui.
-  return // Retorne o resultado aqui
+  const type = typeof types[0];
+  return types.every((item) => typeof item === type);
 }
 
 module.exports = dataType;
