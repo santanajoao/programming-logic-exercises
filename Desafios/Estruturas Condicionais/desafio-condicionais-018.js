@@ -31,8 +31,26 @@ Os seus retornos devem seguir o mesmo padrão dos exemplos acima.
 
 */
 
+const getScore = (card1, card2) => {
+  const cardsSum = card1 + card2;
+  if (card1 === card2) {
+    return cardsSum * 2;
+  } else if (Math.abs(card1 - card2) === 1) {
+    return cardsSum * 3;
+  } else {
+    return cardsSum;
+  }
+}
+
 function cardsGame(maraCard1, maraCard2, saraCard1, saraCard2){
-  // Desenvolva seu código nessa função
+  let maraScore = getScore(maraCard1, maraCard2);
+  let saraScore = getScore(saraCard1, saraCard2);
+
+  if (maraScore === saraScore) return 'O jogo empatou';
+  
+  if (maraScore > saraScore) return `Mara venceu com ${maraScore} pontos`; 
+
+  return `Sara venceu com ${saraScore} pontos`; 
 }
 
 module.exports = cardsGame;
