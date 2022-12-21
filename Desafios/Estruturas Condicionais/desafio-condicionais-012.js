@@ -26,8 +26,20 @@ Retorne a resultado no seguinte formato:
 
  */
 
+getIMCResult = (IMC) => {
+  if (IMC < 18.5) return 'Magreza';
+
+  if (IMC < 24.9) return 'Normal';
+
+  if (IMC <= 30) return 'Sobrepeso';
+
+  if (IMC > 30) return 'Obesidade';
+}
+
 function IMC(weight, height){
-  // Desenvolva seu código nessa função
+  const IMC = weight / (height * height);
+  const result = getIMCResult(IMC);
+  return `Seu IMC é: ${IMC.toFixed(1)} kg/m2. O Resultado foi: ${result}`;
 }
 
 module.exports = IMC;3
